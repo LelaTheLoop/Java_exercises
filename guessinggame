@@ -1,0 +1,25 @@
+import java.util.Scanner;  // guessing game (easy) + will add hints 
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        System.out.println("I will create a small guessing game");
+        System.out.println("You have to guess a number between 1 - 10");
+
+        Scanner scanner = new Scanner(System.in);
+
+        int num = 7;
+
+        for (int i = 0; i < 3; i++) {
+
+            int user = scanner.nextInt();
+
+            if (user == num) {
+                System.out.println("Congrats. That is correct!");
+                break;
+            } else {
+                System.out.println("That is not correct, try again!");
+            }
+        }
+    }
+}
