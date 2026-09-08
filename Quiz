@@ -1,0 +1,124 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner user = new Scanner(System.in);
+
+        int joey = 0;
+        int rachel = 0;
+        int chandler = 0;
+        int monica = 0;
+        int phoebe = 0;
+        int ross = 0;
+
+        System.out.println("Hi! Do you want to do a quiz? Yes/No?");
+        String answer = user.nextLine();
+
+        if (!answer.equalsIgnoreCase("yes")) {
+            System.out.println("No problem! Maybe next time.");
+            return;
+        }
+
+        System.out.println("Do you like the series Friends? Yes/No?");
+        answer = user.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            joey++;
+            rachel++;
+        }
+
+        System.out.println("Based on your answers, we will see which character you are.");
+
+        System.out.println("Do you like fashion? Yes/No?");
+        answer = user.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            rachel++;
+        } else {
+            chandler++;
+        }
+
+        System.out.println("What is your favourite food?");
+        System.out.println("1. Pizza");
+        System.out.println("2. Salad");
+        System.out.println("3. Meatball sandwich");
+        System.out.println("4. Cheesecake");
+        System.out.println("5. Veggie Lasagna");
+
+        int food = user.nextInt();
+        user.nextLine();
+
+        if (food == 1) {
+            joey++;
+        } else if (food == 2) {
+            monica++;
+        } else if (food == 3) {
+            joey++;
+        } else if (food == 4) {
+            chandler++;
+        } else if (food == 5) {
+            phoebe++;
+        }
+
+        System.out.println("Do you like going to museums? Yes/No?");
+        answer = user.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            ross++;
+        }
+
+        System.out.println("Do you like data analysis? Yes/No?");
+        answer = user.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            ross++;
+            chandler++;
+        }
+
+        System.out.println("Are you married? Yes/No?");
+        answer = user.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            monica++;
+        } else {
+            joey++;
+        }
+
+        // Find the character with the highest score
+
+        int highest = joey;
+        String character = "Joey";
+
+        if (rachel > highest) {
+            highest = rachel;
+            character = "Rachel";
+        }
+
+        if (chandler > highest) {
+            highest = chandler;
+            character = "Chandler";
+        }
+
+        if (monica > highest) {
+            highest = monica;
+            character = "Monica";
+        }
+
+        if (phoebe > highest) {
+            highest = phoebe;
+            character = "Phoebe";
+        }
+
+        if (ross > highest) {
+            highest = ross;
+            character = "Ross";
+        }
+
+        System.out.println();
+        System.out.println("Based on your answers, you are " + character + "!");
+        System.out.println("Your score: " + highest);
+
+        user.close();
+    }
+}
