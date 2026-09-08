@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+    Scanner user = new Scanner(System.in);
+    
+
+    System.out.println("Let's write a small code");
+    System.out.println("Input a number, i will tell you if it is odd or even");
+
+    int number = user.nextInt();
+
+    if (number % 2 == 0 ) {
+      System.out.println("The number is even");
+    } else if (number % 2 != 0) {
+      System.out.println("The number is odd");
+    }
+    // a small code for exercising if/for 
+
+    
+  }
+}
