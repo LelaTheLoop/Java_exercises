@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+class Main {
+  public static void main(String[] args) {
+
+    Scanner user = new Scanner(System.in);
+    
+
+    System.out.println("Let's write a small code");
+
+    System.out.println("Input a number");
+    int num1 = user.nextInt(); // user inputs an number 
+
+    System.out.println("Input second number");
+    int num2 = user.nextInt(); // user inputs a second number
+
+    System.out.println("1. Addition");
+    System.out.println("2. Substraktion");
+    System.out.println("3. Multiplication");
+    System.out.println("4. Division");
+
+    System.out.println("Choose an operator: "); // user is choosing an operator
+
+    int operator = user.nextInt(); // the number that the user is choosing is storing in the int operator 
+
+   if (operator == 1) {
+    System.out.println("You chose addition, the result is: " + (num1 + num2));
+   } else if (operator == 2) {
+    System.out.println("You chose Substraction, the result is:  " + (num1 - num2));
+   } else if (operator == 3) {
+    System.out.println("You chose Multiplication, the result is:  " + (num1 * num2));
+   } else if (operator == 4) {
+    System.out.println("You chose Division, the result is:  " + (num1 / num2));
+   } else {
+    System.out.println("invalid choice"); //  if user chooses something else , will give back as an ivalid choise
+   }
+
+   
+    
+  }
+}
