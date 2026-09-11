@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Today i will make a guessing game.");
+      System.out.println("I am thinking about a number beetwen 1-100");
+      System.out.println("A Hint: The number can be divided with 2.");
+      System.out.println("You have 3 guesses");
+
+      Scanner scanner = new Scanner(System.in);
+      
+      int corecctNum = 30;
+       for (int i = 0; i < 3; i++) {
+        int num = scanner.nextInt();
+
+      if (num == corecctNum) {
+        System.out.println("Congrats. That is correct."); 
+        break;
+      } else {
+        System.out.println("Please try again.");
+        System.out.println("Do you want an hint? Yes/No.");
+        String answer = scanner.next();
+        if (answer.equalsIgnoreCase("yes")) {
+          System.out.println("The number is divided by 2. When number divided,it can not be divided again by 2.");
+         } else {
+          System.out.println("Try again.");
+        }
+
+        }
+
+      } 
+    }
+  }
