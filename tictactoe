@@ -1,0 +1,84 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Hello World");
+        System.out.println("Second exercise will be tic-tac-toe game");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the game. Rules: You will be automatically declared with X or O. Depending on the mood. After that you are allowed to start.");
+        System.out.println("Are you ready? Yes/No");
+
+        String answer = scanner.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+
+            System.out.println("Let the game begin. You will be declared with a letter.");
+
+            Random random = new Random();
+            String randomLetter = random.nextBoolean() ? "X" : "O";
+
+            System.out.println("Your Letter is " + randomLetter);
+
+            String[] fields = new String[9];
+
+            boolean gameIsRunning = true;
+
+             int[][] winningCombinations = {
+        {0, 1, 2},
+        {3, 4, 5},
+        {6, 7, 8},
+        {0, 3, 6},
+        {1, 4, 7},
+        {2, 5, 8},
+        {0, 4, 8},
+        {2, 4, 6}
+             };
+
+            if (randomLetter.equalsIgnoreCase("X")) {
+
+                System.out.println("You start first");
+                System.out.println("Choose a field (0-8):");
+
+                int choice = scanner.nextInt();
+                fields[choice] = randomLetter;
+
+            } else {
+
+                System.out.println("I am starting");
+
+                // Computer is X because the player is O
+                fields[4] = "X";
+            }
+
+            while (gameIsRunning) {
+
+                while (gameIsRunning) {
+
+    System.out.println("Choose a field (0-8):");
+    int choice = scanner.nextInt();
+
+    fields[choice] = randomLetter;
+
+    for (int[] combination : winningCombinations) {
+
+        if (fields[combination[0]] != null &&
+            fields[combination[0]].equals(fields[combination[1]]) &&
+            fields[combination[1]].equals(fields[combination[2]])) {
+
+            System.out.println("Someone wins!");
+        }
+    }
+}
+
+                }
+
+              } else {
+
+            System.out.println("Maybe next time");
+        }
+    }
+}
