@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Simple Expense Generator");
+        System.out.println("You can calculate all your expenses");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter your total expenses");
+        double expenseNum = scanner.nextDouble();
+
+        System.out.println("Please enter the first expense");
+        double num1 = scanner.nextDouble();
+
+        System.out.println("Do you want to add something to your expenses or do you want to subtract?");
+
+        scanner.nextLine(); // consume the leftover Enter
+        String answer = scanner.nextLine();
+
+        if (answer.equalsIgnoreCase("add")) {
+            System.out.println("Adding to your expense: " + (num1 + expenseNum));
+        } else {
+            System.out.println("Subtracting from your expense: " + (num1 - expenseNum));
+        }
+
+        scanner.close();
+    }
+}
