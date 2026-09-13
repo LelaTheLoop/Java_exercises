@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Simple age calculator");
+        System.out.println("Based on your birth year I am going to calculate your age");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter your birth year");
+        int birthYear = scanner.nextInt();
+
+        int actualYear = 2026;
+        int age = actualYear - birthYear;
+
+        System.out.println("Your age is " + age);
+
+        if (age >= 18) {
+            System.out.println("You are an adult");
+        } else {
+            System.out.println("You are a juvenile");
+        }
+
+        scanner.nextLine();
+
+        System.out.println("Do you want me to calculate as well your BMI? Yes/no");
+        String answer = scanner.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+
+            System.out.println("Please enter your weight (kg): ");
+            double userWeight = scanner.nextDouble();
+
+            System.out.println("Please enter your height (cm): ");
+            double userHeight = scanner.nextDouble();
+
+            double heightInMeters = userHeight / 100;
+
+            double BMI = userWeight / (heightInMeters * heightInMeters);
+
+            System.out.println("Your BMI is: " + BMI);
+
+            if (BMI < 18.5) {
+            System.out.println("BMI is underweight");
+            } else if (BMI <= 24.5) {
+            System.out.println("BMI is okay.");
+            } else if (BMI < 30) {
+            System.out.println("BMI is overweight");
+            } else {
+            System.out.println("Obesity.");
+        }
+        scanner.close();
+    }
+}
+}
