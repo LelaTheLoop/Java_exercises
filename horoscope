@@ -1,0 +1,154 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Simple Horoscope calculator - quiz");
+        System.out.println("Based on your answers, we are going to calculate your horoscope");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Are you ready? Yes/No");
+        String answer = scanner.nextLine();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            System.out.println("Okay, let's start.");
+        } else {
+            System.out.println("Next time.");
+            scanner.close();
+            return;
+        }
+
+        System.out.println("First question: Do you enjoy being outdoors?");
+        String answer1 = scanner.nextLine();
+
+        System.out.println("Second question: Do you consider yourself organized?");
+        String answer2 = scanner.nextLine();
+
+        System.out.println("Third question: Do you enjoy being the center of attention?");
+        String answer3 = scanner.nextLine();
+
+        System.out.println("Fourth question: Would your friends describe you as stubborn?");
+        String answer4 = scanner.nextLine();
+
+        int aries = 0;
+        int taurus = 0;
+        int gemini = 0;
+        int cancer = 0;
+        int leo = 0;
+        int virgo = 0;
+        int libra = 0;
+        int scorpio = 0;
+        int sagittarius = 0;
+        int capricorn = 0;
+        int aquarius = 0;
+        int pisces = 0;
+
+        // Virgo
+        if (answer1.equalsIgnoreCase("yes") &&
+            answer2.equalsIgnoreCase("yes")) {
+            virgo++;
+        }
+
+        // Scorpio, Taurus and Pisces
+        if (answer3.equalsIgnoreCase("no") &&
+            answer4.equalsIgnoreCase("yes")) {
+            scorpio++;
+            taurus++;
+            pisces++;
+        }
+
+        // Taurus and Pisces
+        if (answer1.equalsIgnoreCase("yes") &&
+            answer4.equalsIgnoreCase("yes")) {
+            taurus++;
+            pisces++;
+        }
+
+        // Aquarius and Libra
+        if (answer1.equalsIgnoreCase("no") &&
+            answer2.equalsIgnoreCase("no")) {
+            aquarius++;
+            libra++;
+        }
+
+        // Leo and Sagittarius
+        if (answer3.equalsIgnoreCase("yes") &&
+            answer4.equalsIgnoreCase("no")) {
+            leo++;
+            sagittarius++;
+        }
+
+        // Scorpio and Pisces
+        if (answer2.equalsIgnoreCase("yes") &&
+            answer3.equalsIgnoreCase("no")) {
+            scorpio++;
+            pisces++;
+        }
+
+        // Find the highest score
+        int highestScore = aries;
+        String horoscope = "Aries";
+
+        if (taurus > highestScore) {
+            highestScore = taurus;
+            horoscope = "Taurus";
+        }
+
+        if (gemini > highestScore) {
+            highestScore = gemini;
+            horoscope = "Gemini";
+        }
+
+        if (cancer > highestScore) {
+            highestScore = cancer;
+            horoscope = "Cancer";
+        }
+
+        if (leo > highestScore) {
+            highestScore = leo;
+            horoscope = "Leo";
+        }
+
+        if (virgo > highestScore) {
+            highestScore = virgo;
+            horoscope = "Virgo";
+        }
+
+        if (libra > highestScore) {
+            highestScore = libra;
+            horoscope = "Libra";
+        }
+
+        if (scorpio > highestScore) {
+            highestScore = scorpio;
+            horoscope = "Scorpio";
+        }
+
+        if (sagittarius > highestScore) {
+            highestScore = sagittarius;
+            horoscope = "Sagittarius";
+        }
+
+        if (capricorn > highestScore) {
+            highestScore = capricorn;
+            horoscope = "Capricorn";
+        }
+
+        if (aquarius > highestScore) {
+            highestScore = aquarius;
+            horoscope = "Aquarius";
+        }
+
+        if (pisces > highestScore) {
+            highestScore = pisces;
+            horoscope = "Pisces";
+        }
+
+        System.out.println();
+        System.out.println("Based on your answers, your sign is: " + horoscope);
+
+
+        scanner.close();
+    }
+}
