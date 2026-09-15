@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Going to count till 10");
+    for (int i = 0; i < 11; i++)
+    System.out.println(i);
+    
+    System.out.println("Add two numbers: ");
+    Scanner scanner = new Scanner(System.in);
+    int num1 = scanner.nextInt();
+
+    System.out.println("Add second number: ");
+    int num2 = scanner.nextInt();
+
+    System.out.println("The result is: " + (num1 + num2)); 
+
+    System.out.println("Can u calculate the tri");
+
+    System.out.println("Add the a: ");
+    int a = scanner.nextInt();
+
+    System.out.println("Add the b: ");
+    int b = scanner.nextInt();
+
+    System.out.println("Add the c: ");
+    int c = scanner.nextInt();
+
+    
+
+    
+
+
+
+  }
+}
