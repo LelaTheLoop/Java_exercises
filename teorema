@@ -1,0 +1,70 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class PitagorinaTeorema {
+
+    // Metoda za računanje hipotenuze
+    public static double izracunajHipotenuzu(double a, double b) {
+        return Math.sqrt(a * a + b * b);
+    }
+
+    // Metoda za računanje katete kada znamo hipotenuzu i drugu katetu
+    public static double izracunajKatetu(double c, double drugaKateta) {
+        double razlika = c * c - drugaKateta * drugaKateta;
+        if (razlika < 0) {
+            throw new IllegalArgumentException("Nema rješenja: hipotenuza mora biti najveća stranica.");
+        }
+        return Math.sqrt(razlika);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Odaberite opciju:");
+            System.out.println("1 - Izračunaj hipotenuzu (a i b poznati)");
+            System.out.println("2 - Izračunaj katetu (c i druga kateta poznati)");
+            System.out.print("Unos: ");
+            int izbor = scanner.nextInt();
+
+            if (izbor == 1) {
+                System.out.print("Unesite stranicu a: ");
+                double a = scanner.nextDouble();
+                System.out.print("Unesite stranicu b: ");
+                double b = scanner.nextDouble();
+
+                if (a <= 0 || b <= 0) {
+                    System.out.println("Stranice moraju biti pozitivne.");
+                    return;
+                }
+
+                double c = izracunajHipotenuzu(a, b);
+                System.out.printf("Hipotenuza je: %.4f%n", c);
+
+            } else if (izbor == 2) {
+                System.out.print("Unesite hipotenuzu c: ");
+                double c = scanner.nextDouble();
+                System.out.print("Unesite poznatu katetu: ");
+                double kateta = scanner.nextDouble();
+
+                if (c <= 0 || kateta <= 0) {
+                    System.out.println("Stranice moraju biti pozitivne.");
+                    return;
+                }
+
+                double drugaKateta = izracunajKatetu(c, kateta);
+                System.out.printf("Nepoznata kateta je: %.4f%n", drugaKateta);
+
+            } else {
+                System.out.println("Nepoznata opcija.");
+            }
+
+        } catch (InputMismatchException e) {
+            System.out.println("Greška: unesite ispravne brojeve.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Greška: " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
+    }
+}
